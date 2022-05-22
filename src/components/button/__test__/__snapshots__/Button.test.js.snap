@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`I am Testing util file i am testing f1 function 1`] = `
+<button>
+  That is my btn 
+  mybtn
+</button>
+`;

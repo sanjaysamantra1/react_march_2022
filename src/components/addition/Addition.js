@@ -30,7 +30,6 @@ export default function Addition() {
 
   return (
     <>
-      {console.log("render calleddddddddddd")}
       <div>Addition Example</div>
       <input name="num1" onChange={changeHandler} />
       <input name="num2" onChange={changeHandler} />

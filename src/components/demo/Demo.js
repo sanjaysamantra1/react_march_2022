@@ -1,47 +1,25 @@
-/* eslint-disable react/prop-types */
-import React, { Component } from "react";
+import React, { useEffect, useId } from "react";
 
-export default class Demo extends Component {
-  constructor(props) {
-    super(props);
-    console.log("constructor");
-
-    this.state = {
-      name: "sachin",
-    };
-  }
-  // static getDerivedStateFromProps(props, state) {
-  //   console.log("get derived state from props", props, state);
-  //   return { name: props.name };
-  // }
-  shouldComponentUpdate() {
-    console.log("shouldComponentUpdate");
-    return true;
-  }
-  getSnapshotBeforeUpdate(prevProps, prevState) {
-    document.getElementById("div1").innerHTML =
-      "Before the update, the name was " + prevState.name;
-  }
-  componentDidUpdate() {
-    document.getElementById("div2").innerHTML =
-      "The updated name is " + this.state.name;
-  }
-  componentDidMount() {
-    console.log("componentDidMount");
-    // 1. AJAX   2.DOM
-    document.getElementById("div1").style.color = "red";
-  }
-  render() {
-    console.log("render");
-    return (
+export default function Demo() {
+  const id = useId(0);
+  useEffect(() => {
+    console.log('i am useeffect')
+  
+    return () => {
+      
+    }
+  }, [])
+  
+  return (
+    <div>
+      <label htmlFor={id + "-firstName"}>First Name</label>
       <div>
-        Demo - {this.state.name} <br />
-        <button onClick={() => this.setState({ name: "rahul" })}>
-          update data
-        </button>
-        <div id="div1"></div>
-        <div id="div2"></div>
+        <input id={id + "-firstName"} type="text" />
       </div>
-    );
-  }
+      <label htmlFor={id + "-lastName"}>Last Name</label>
+      <div>
+        <input id={id + "-lastName"} type="text" />
+      </div>
+    </div>
+  );
 }
