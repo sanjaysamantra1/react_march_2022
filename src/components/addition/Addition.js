@@ -36,7 +36,7 @@ export default function Addition() {
       <button onClick={findSum}>Add</button>
 
       <p>
-        addition of {num1} and {num2} is {sum} - {name}
+        addition of {num1} and {num2} is: {sum} - {name}
       </p>
     </>
   );
